@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="large-9 columns">
+    <%= form_tag complete_tasks_path, method: :patch do %>
+      <% if @tasks.count > 0 %>
+        <%= render partial: 'tasklist', locals: {tasks: @tasks} %>
+        <% if current_user %>
+          <%= submit_tag "I AM DONE WITH THIS SHIT", class: "button small success radius" %>               
+        <% end %>
+      <% else %>
+      You are free to do as you please...you bum. Care to join me in a game of Hearthstone?
+      <% end %>
+      
+    <% end %>
+  </div>
+</div>

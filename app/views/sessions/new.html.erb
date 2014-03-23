@@ -1,0 +1,40 @@
+<div align = "center"> <font color="FF00FF" face="Comic Sans MS" size="12"> sup ^_____^ </div> </font><hr>
+<%= form_tag sessions_path do %>
+  
+  <div class="row">
+    <div class="large-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= label_tag :email, "Email", class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->          
+          <%= text_field_tag :email, params[:email]%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= label_tag :password, "Password", class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+          <%= password_field_tag :password %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="actions row">
+    <div class="large-5 large-offset-2 columns">
+      <%= submit_tag "Join Me", class: "button round small" %>
+    </div>
+    
+  </div>
+<% end %>

@@ -1,0 +1,65 @@
+<%= form_for(task) do |f| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation" data-alert data-options="animation_speed:500;" class="alert-box warning radius">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="large-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= f.label :name, class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+          <%= f.text_field :name, placeholder: "Task" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= f.label :category, class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+          <%= f.text_field :category, placeholder: "Category" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= f.label :due_date, class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+          <%= f.date_field :due_date %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="actions row">
+    <div class="large-5 large-offset-2 columns">
+      <%= f.submit class: "button round small" %>
+    </div>
+    
+  </div>
+<% end %>

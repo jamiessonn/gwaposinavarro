@@ -1,0 +1,181 @@
+// Place all the styles related to the Navigation controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.float-right {
+	float:right;
+}
+
+@mixin circle-text($bgcolor) {
+    width:60%;
+    color:white;
+    &:after {
+	    content: "";
+	    display: block;
+	    width: 100%;
+	    height:0;
+	    padding-bottom: 100%;
+	    background: $bgcolor; 
+	    -moz-border-radius: 50%; 
+	    -webkit-border-radius: 50%; 
+	    border-radius: 50%;
+	}
+	div {
+	    float:left;
+	    width:100%;
+	    padding-top:18%;
+	    padding-left:7%;
+	    padding-right:5%;
+	    line-height:0.7em;
+	    margin-top:-0.5em;
+	    text-align:center;
+	    color:white;	    
+	    h3 {
+	    	font-size:2em;
+	    }
+	    p {
+	    	font-size:1.2em;
+	    	a {
+	    		color:#FFF;
+	    	}
+	    }
+	}
+	.fill {
+		padding-top:40%
+	}
+
+}
+
+.purple-circle {
+	@include circle-text(#AC3BD4)
+}
+
+.red-circle {
+	@include circle-text(red)
+}
+
+.pink-circle{
+	@include circle-text(pink)
+}
+
+.blue-circle {
+	@include circle-text(#33CEC3)
+} 
+
+.orange-circle {
+	@include circle-text(#FFB300)
+}
+
+.gray-circle {
+	@include circle-text(#777)
+}
+$height: 100px;
+$width: $height * 2;
+.left-circle-text {
+    width:$width;  
+    height:$height;      
+	&:after{
+		content: "";
+	    display: block;
+	    width: 100%;
+	    height:0;
+	    padding-bottom: 100%;
+	    background: #AC3BD4; 
+	 	-moz-border-radius: $height 0 0 $height; 
+	     -webkit-border-radius: $height 0 0 $height; 
+	     border-radius: $height 0 0 $height;
+	}
+	div {
+		float:right;
+	    width:100%;
+	    padding-top:10%;
+	    line-height:1em;
+	    margin-top:-0.5em;
+	    text-align:right;
+	    color:white;
+	}
+}
+.left-circle {
+	width:$width;  
+    height:$height;      
+    background: #AC3BD4; 
+ 	-moz-border-radius: $height 0 0 $height; 
+     -webkit-border-radius: $height 0 0 $height; 
+     border-radius: $height 0 0 $height;
+}
+.x0 {
+    float:left;
+    width:100%;
+}
+.x1 {
+    margin:0px auto;
+}
+.x2 {
+    overflow:hidden;
+    display:block;
+    float:left;
+    width:auto;
+    height:auto;
+    position: relative;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    -khtml-border-radius: 50%;
+    background:#eee;
+}
+.x3 {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top:0;
+    font-size: 100%;
+    float:left;
+    height:100%;
+    background-color:#FFF;
+}
+/* BEG Content */
+.x3 div{float:left;}
+.x6 {
+    width:100%;
+    height:100%;
+}
+.x7,.x8 {
+    width:50%;
+    float:left;
+    height:100%;
+    display:table;    
+    p {		
+    	color:#FFF;
+    	display: table-cell;
+		vertical-align: middle;
+		font-size: 24px;
+		span {
+			font-size:1.5em;
+			font-style: strong;
+		}
+    }
+}
+.x7 {
+    background-color:#AC3BD4;
+    text-align:right;
+}
+.x8 {
+    background-color:#FFB300;
+    text-align:left;
+}
+/* END Content */
+@media (max-width: 320px) 
+{
+    .x2 {padding: 50%;}
+}
+
+@media (min-width: 321px) and (max-width: 800px)
+{
+    .x2 {padding: 25%;}
+}
+
+@media (min-width: 801px)
+{
+    .x1 {width:800px}
+    .x2 {padding: 50%;}
+}

@@ -1,0 +1,67 @@
+<h1><font color="red" face="Comic Sans MS">Sign Up</font></h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation" data-alert data-options="animation_speed:500;" class="alert-box warning radius">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited you from signing up:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="large-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= f.label :email, class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+          <%= f.text_field :email%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= f.label :password, class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+          <%= f.password_field :password %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-9">
+      <div class="row">
+        <div class="large-3 columns">
+          <!-- <label for="right-label" class="right inline">Label</label> -->
+          <%= f.label :password_confirmation, class: "right inline" %>
+        </div>
+        <div class="large-9 columns">
+          <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+          <%= f.password_field :password_confirmation %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="actions row">
+    <div class="large-5 large-offset-2 columns">
+      <%= f.submit "Sign Up", class: "button round small" %>
+    </div>
+    
+  </div>
+<% end %>

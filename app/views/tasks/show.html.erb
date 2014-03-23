@@ -1,0 +1,124 @@
+<body background="http://autoimagesize.com/wp-content/uploads/2014/01/rainbow-backgrounds-colour-photo-rainbow-background.jpg">
+<div class="row">
+	<div class="large-2 columns">
+		<div class="gray-circle">
+			<div class="fill">				
+				<p>
+					<%= link_to 'Back', tasks_path %>	
+				</p>				
+				
+			</div>
+		</div>
+	</div>
+	<div class="large-8 columns">
+		<div class="orange-circle">
+			<div class="fill">
+				<h3><font color="00FF00">Name:</font></h3>
+	<p><%= @task.name %></p>
+			</div>
+		</div>
+	</div>
+	<div class="large-2 columns">
+		<div class="gray-circle">
+			<div class="fill">
+				<p>
+					<%= link_to 'Edit', edit_task_path(@task) %>					
+				</p>								
+				
+			</div>
+		</div>
+	</div>	
+</div>
+<div class="row">
+	<div class="large-7 large-offset-5 columns">
+		<div class="purple-circle float-right">
+			<div class="fill">
+				<h3><font color="FFFF00">Category:</font></h3>
+				<p>
+					<%= @task.category %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-9 columns">
+		<div class="blue-circle">
+			<div class="fill">
+				<h3><font color="FF0099">Due Date:</font></h3>
+				<p>
+					<%= @task.due_date %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="large-8 large-offset-4 columns">
+		<div class="orange-circle float-right">
+			<div class="fill">
+				<h3><font color="990099">Status</font></h3>
+				<p>
+					<% if @task.is_completed %>
+						<font face="Wingdings" size="100"><b>CJ</b></font>
+					<% else %>
+						<font face="Wingdings" size="100"><b>LD</b></font>
+					<% end %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+  <div class="large-8 columns">
+
+    <h1><div align="center"><font color="FF9900">Ansabe?</font></div></h1>
+    <%= form_for([@task, @comment]) do |f| %>
+      <% if @comment.errors.any? %>
+      <div id="error_explanation" data-alert data-options="animation_speed:500;" class="alert-box warning radius">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+        
+        <ul>
+          <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <div class="row">
+        <div class="large-9">
+          <div class="row">
+            <div class="large-3 columns">
+              <!-- <label for="right-label" class="right inline">Label</label> -->
+              <%= f.label :comment, class: "right inline" %>
+            </div>
+            <div class="large-9 columns">
+              <!-- <input type="text" id="right-label" placeholder="Inline Text Input"> -->
+              <%= f.text_area :body, placeholder: "Woh. Say my name." %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions row">
+        <div class="large-5 large-offset-2 columns">
+          <%= f.submit class: "button round small" %>
+        </div>
+        
+      </div>
+    <% end %>
+      <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+      <div class="row">
+        <div class="large-12 columns">
+          <hr/>
+          <h4>
+            <%= comment.user %>           
+          </h4>
+          <p><%= comment.body %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</body>

@@ -1,0 +1,19 @@
+$footer-height: 3em; 
+html, body { height: 100%; }
+#wrap {
+    padding-top: 10px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto ($footer-height * -1);
+}
+#wrap > *:last-child {
+    padding-bottom: $footer-height;
+}
+#footer {
+    height: $footer-height;
+    text-align: right;
+    p {
+    	padding-right: 10px;
+    }
+}

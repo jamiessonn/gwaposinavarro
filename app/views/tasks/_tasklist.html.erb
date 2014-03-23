@@ -1,0 +1,11 @@
+<% tasks.each do |task| %>
+      <div class="row">
+        <div class="large-12 columns">
+          <%= check_box_tag("task_ids[]", task.id, task.is_completed) %>
+          <label>
+          	<%= link_to task.name, task %>           
+          </label>
+        </div>
+        <hr/>
+      </div>
+    <% end %>
